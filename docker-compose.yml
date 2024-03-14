@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'examendockerdb'
+      
+      MYSQL_USER: 'root'
+
+      MYSQL_PASSWORD: ''
+
+      MYSQL_ROOT_PASSWORD: ''
+    ports:
+      - '8080:8080'
+    expose:
+      - '8080'
+
+    volumes:
+      - my-db:/var/lib/mysql
+volumes:
+  my-db:
